@@ -29,9 +29,9 @@ $addresses = isset( $args['addresses'] ) && is_array( $args['addresses'] ) ? $ar
         <table class="directorist-branch-table">
             <thead>
                 <tr>
+                    <th><?php esc_html_e( 'Address', 'directorist' ); ?></th>
                     <th><?php esc_html_e( 'Branch Name', 'directorist' ); ?></th>
                     <th><?php esc_html_e( 'Phone', 'directorist' ); ?></th>
-                    <th><?php esc_html_e( 'Address', 'directorist' ); ?></th>
                 </tr>
             </thead>
             <tbody>
