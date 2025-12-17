@@ -74,31 +74,27 @@
     gap: 10px;
 }
 
-/* Container for each branch */
-.branch-fields {
+.directorist-form-multi-address-field .address_item {
     border: 1px solid #ccc;
     padding: 15px;
     margin-bottom: 15px;
     border-radius: 6px;
     background-color: #f9f9f9;
+    position: relative;
 }
 
-/* Each input wrapper */
-.branch-fields > div {
+.directorist-form-multi-address-field .address_item div {
     margin-bottom: 10px;
 }
 
-/* Labels */
-.branch-fields label {
+.directorist-form-multi-address-field label {
     display: block;
     font-weight: bold;
     margin-bottom: 5px;
     font-size: 14px;
-    color: #333;
 }
 
-/* Inputs */
-.branch-fields input[type="text"] {
+.directorist-form-multi-address-field input[type="text"] {
     width: 100%;
     padding: 8px 10px;
     font-size: 14px;
@@ -108,25 +104,28 @@
     transition: border-color 0.2s;
 }
 
-/* Input focus style */
-.branch-fields input[type="text"]:focus {
+.directorist-form-multi-address-field input[type="text"]:focus {
     border-color: #0073aa;
     outline: none;
 }
 
-/* Optional: make inputs side by side on larger screens */
-@media(min-width: 600px) {
-    .branch-fields > div {
-        display: flex;
-        align-items: center;
-    }
+.directorist-form-multi-address-field .remove_address_btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #e74c3c;
+    color: #fff;
+    border: none;
+    padding: 4px 8px;
+    cursor: pointer;
+    border-radius: 3px;
+}
 
-    .branch-fields label {
-        width: 150px;
-        margin-bottom: 0;
-    }
-
-    .branch-fields input[type="text"] {
-        flex: 1;
-    }
+.directorist-form-multi-address-field .add_address_btn {
+    background: #0073aa;
+    color: #fff;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+    border-radius: 3px;
 }

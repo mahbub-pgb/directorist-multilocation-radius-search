@@ -15,85 +15,64 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 
     <!-- Holder for all address items -->
     <div class="address_field_holder">
-        <?php if ( ! empty( $args['addresses'] ) ) : ?>
-            <?php foreach ( $args['addresses'] as $index => $address ) : ?>
-                <div class="address_item">
-                    <input 
-                        type="text" 
-                        autocomplete="off" 
-                        name="addresses[]" 
-                        class="directorist-form-element google_addresses" 
-                        placeholder="Enter address"
-                        value="<?php echo esc_attr( $address['address'] ?? '' ); ?>"
-                    >
-                    <input 
-                        type="hidden" 
-                        class="google_addresses_lat" 
-                        name="latitude[]" 
-                        value="<?php echo esc_attr( $address['latitude'] ?? '' ); ?>"
-                    >
-                    <input 
-                        type="hidden" 
-                        class="google_addresses_lng" 
-                        name="longitude[]" 
-                        value="<?php echo esc_attr( $address['longitude'] ?? '' ); ?>"
-                    >
-                    
-                    <button 
-                        type="button" 
-                        class="remove_address_btn" 
-                        style="<?php echo $index === 0 ? 'display:none;' : ''; ?>"
-                    >
-                        X
-                    </button>
-                </div>
-                <div class="branch-fields">                    
-
-                    <!-- Optional Branch Label -->
-                    <div>
-                        <label>Optional Branch Label:</label>
-                        <input 
-                            type="text" 
-                            class="branch_label" 
-                            name="branch_label[]" 
-                            placeholder="Enter branch label"
-                        >
-                    </div>
-
-                    <!-- Optional Phone -->
-                    <div>
-                        <label>Optional Phone:</label>
-                        <input 
-                            type="text" 
-                            class="branch_phone" 
-                            name="branch_phone[]" 
-                            placeholder="Enter phone number"
-                        >
-                    </div>
-                </div>
-
-            <?php endforeach; ?>
-        <?php else : ?>
-            <!-- Default empty item if no saved addresses -->
-            <div class="address_item">
-                <input type="text" autocomplete="off" name="addresses[]" class="directorist-form-element google_addresses" placeholder="Enter address">
-                <input type="hidden" class="google_addresses_lat" name="latitude[]" value="">
-                <input type="hidden" class="google_addresses_lng" name="longitude[]" value="">
-                <button type="button" class="remove_address_btn" style="display:none;">X</button>
+        <?php 
+        $addresses = $args['addresses'] ?? [];
+        if ( ! empty( $addresses ) ) :
+            foreach ( $addresses as $index => $address ) :
+        ?>
+        <div class="address_item">
+            <!-- Address input -->
+            <div>
+                <label>Address:</label>
+                <input type="text" autocomplete="off" name="addresses[]" class="google_addresses" placeholder="Enter address" value="<?php echo esc_attr( $address['address'] ?? '' ); ?>">
             </div>
+
+            <!-- Branch label -->
+            <div>
+                <label>Optional Branch Label:</label>
+                <input type="text" name="branch_label[]" class="branch_label" placeholder="Enter branch label">
+            </div>
+
+            <!-- Phone -->
+            <div>
+                <label>Optional Phone:</label>
+                <input type="text" name="branch_phone[]" class="branch_phone" placeholder="Enter phone number">
+            </div>
+
+            <!-- Hidden latitude & longitude -->
+            <input type="hidden" class="google_addresses_lat" name="latitude[]" value="<?php echo esc_attr( $address['latitude'] ?? '' ); ?>">
+            <input type="hidden" class="google_addresses_lng" name="longitude[]" value="<?php echo esc_attr( $address['longitude'] ?? '' ); ?>">
+
+            <!-- Remove button -->
+            <button type="button" class="remove_address_btn" <?php echo $index === 0 ? 'style="display:none;"' : ''; ?>>X</button>
+        </div>
+        <?php endforeach; 
+        else: ?>
+        <div class="address_item">
+            <div>
+                <label>Address:</label>
+                <input type="text" autocomplete="off" name="addresses[]" class="google_addresses" placeholder="Enter address">
+            </div>
+            <div>
+                <label>Optional Branch Label:</label>
+                <input type="text" name="branch_label[]" class="branch_label" placeholder="Enter branch label">
+            </div>
+            <div>
+                <label>Optional Phone:</label>
+                <input type="text" name="branch_phone[]" class="branch_phone" placeholder="Enter phone number">
+            </div>
+            <input type="hidden" class="google_addresses_lat" name="latitude[]" value="">
+            <input type="hidden" class="google_addresses_lng" name="longitude[]" value="">
+            <button type="button" class="remove_address_btn" style="display:none;">X</button>
+        </div>
         <?php endif; ?>
     </div>
 
     <!-- Add new address button -->
     <button type="button" class="add_address_btn">+ Add Address</button>
 
-    <!-- Hidden field for storing JSON encoded addresses -->
-    <input 
-        type="hidden" 
-        name="<?php echo esc_attr( $data['field_key'] ); ?>" 
-        class="google_addresses_json" 
-        value="<?php echo esc_attr( $data['value'] ); ?>"
-    >
+    <!-- Hidden JSON field -->
+    <input type="hidden" name="<?php echo esc_attr( $data['field_key'] ); ?>" class="google_addresses_json" value="<?php echo esc_attr( $data['value'] ); ?>">
 
 </div>
 
