@@ -133,6 +133,7 @@ if (! class_exists('Multi_Location_Custom_Field')):
             if (is_array($args)) {
                 extract($args);
             }
+            
 
             $theme_template  = '/directorist-custom-code/' . $template_file . '.php';
             $plugin_template = DIRECTORIST_MLRS_DIR . $template_file . '.php';

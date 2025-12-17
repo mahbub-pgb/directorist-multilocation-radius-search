@@ -8,6 +8,7 @@
         $addresses = $args['addresses'] ?? [];
         if ( ! empty( $addresses ) ) :
             foreach ( $addresses as $index => $address ) :
+
         ?>
         <div class="address_item">
             <!-- First line: full-width Address -->
@@ -23,11 +24,15 @@
             <div class="branch_line">
                 <div class="branch_label_wrapper">
                     <label>Optional Branch Label:</label>
-                    <input type="text" name="branch_label[]" class="branch_label" placeholder="Enter branch label">
+                    <input type="text" name="branch_label[]" class="branch_label" placeholder="Enter branch label"
+                     value="<?php echo esc_attr( $address['branch_label'] ?? '' ); ?>"
+                    >
                 </div>
                 <div class="branch_phone_wrapper">
                     <label>Optional Phone:</label>
-                    <input type="text" name="branch_phone[]" class="branch_phone" placeholder="Enter phone number">
+                    <input type="text" name="branch_phone[]" class="branch_phone" placeholder="Enter phone number"
+                     value="<?php echo esc_attr( $address['phone'] ?? '' ); ?>"
+                     >
                 </div>
             </div>
 
@@ -51,11 +56,15 @@
             <div class="branch_line">
                 <div class="branch_label_wrapper">
                     <label>Optional Branch Label:</label>
-                    <input type="text" name="branch_label[]" class="branch_label" placeholder="Enter branch label">
+                    <input type="text" name="branch_label[]" class="branch_label" placeholder="Enter branch label"
+                    value="<?php echo esc_attr( $address['branch_label'] ?? '' ); ?>"
+                    >
                 </div>
                 <div class="branch_phone_wrapper">
                     <label>Optional Phone:</label>
-                    <input type="text" name="branch_phone[]" class="branch_phone" placeholder="Enter phone number">
+                    <input type="text" name="branch_phone[]" class="branch_phone" placeholder="Enter phone number"
+                    value="<?php echo esc_attr( $address['phone'] ?? '' ); ?>"
+                    >
                 </div>
             </div>
             <input type="hidden" class="google_addresses_lat" name="latitude[]" value="">
