@@ -36,14 +36,14 @@ $addresses = isset( $args['addresses'] ) && is_array( $args['addresses'] ) ? $ar
             </thead>
             <tbody>
                 <?php foreach ( $addresses as $address ) : 
+                    $location = ! empty( $address['address'] ) ? esc_html( $address['address'] ) : '—';
                     $branch   = ! empty( $address['branch_label'] )  ? esc_html( $address['branch_label'] )  : '—';
                     $phone    = ! empty( $address['phone'] )   ? esc_html( $address['phone'] )   : '—';
-                    $location = ! empty( $address['address'] ) ? esc_html( $address['address'] ) : '—';
                 ?>
                 <tr>
+                    <td><?php echo $location; ?></td>
                     <td><?php echo $branch; ?></td>
                     <td><?php echo $phone; ?></td>
-                    <td><?php echo $location; ?></td>
                 </tr>
                 <?php endforeach; ?>
             </tbody>
