@@ -38,6 +38,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
                         name="longitude[]" 
                         value="<?php echo esc_attr( $address['longitude'] ?? '' ); ?>"
                     >
+                    
                     <button 
                         type="button" 
                         class="remove_address_btn" 
@@ -46,6 +47,31 @@ if ( ! defined( 'ABSPATH' ) ) exit;
                         X
                     </button>
                 </div>
+                <div class="branch-fields">                    
+
+                    <!-- Optional Branch Label -->
+                    <div>
+                        <label>Optional Branch Label:</label>
+                        <input 
+                            type="text" 
+                            class="branch_label" 
+                            name="branch_label[]" 
+                            placeholder="Enter branch label"
+                        >
+                    </div>
+
+                    <!-- Optional Phone -->
+                    <div>
+                        <label>Optional Phone:</label>
+                        <input 
+                            type="text" 
+                            class="branch_phone" 
+                            name="branch_phone[]" 
+                            placeholder="Enter phone number"
+                        >
+                    </div>
+                </div>
+
             <?php endforeach; ?>
         <?php else : ?>
             <!-- Default empty item if no saved addresses -->

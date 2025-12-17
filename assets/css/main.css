@@ -73,3 +73,60 @@
     flex-direction: column;
     gap: 10px;
 }
+
+/* Container for each branch */
+.branch-fields {
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    background-color: #f9f9f9;
+}
+
+/* Each input wrapper */
+.branch-fields > div {
+    margin-bottom: 10px;
+}
+
+/* Labels */
+.branch-fields label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #333;
+}
+
+/* Inputs */
+.branch-fields input[type="text"] {
+    width: 100%;
+    padding: 8px 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    transition: border-color 0.2s;
+}
+
+/* Input focus style */
+.branch-fields input[type="text"]:focus {
+    border-color: #0073aa;
+    outline: none;
+}
+
+/* Optional: make inputs side by side on larger screens */
+@media(min-width: 600px) {
+    .branch-fields > div {
+        display: flex;
+        align-items: center;
+    }
+
+    .branch-fields label {
+        width: 150px;
+        margin-bottom: 0;
+    }
+
+    .branch-fields input[type="text"] {
+        flex: 1;
+    }
+}
