@@ -13,7 +13,10 @@
             <!-- First line: full-width Address -->
             <div class="address_line">
                 <label>Address:</label>
-                <input type="text" class="google_addresses" name="addresses[]" placeholder="Enter address">
+                <input type="text" class="google_addresses" name="addresses[]" placeholder="Enter address"
+                value="<?php echo esc_attr( $address['address'] ?? '' ); ?>"
+                >
+
             </div>
 
             <!-- Second line: Extra Fields -->
@@ -41,7 +44,9 @@
         <div class="address_item">
             <div class="address_line">
                 <label>Address:</label>
-                <input type="text" class="google_addresses" name="addresses[]" placeholder="Enter address">
+                <input type="text" class="google_addresses" name="addresses[]" placeholder="Enter address"
+                value="<?php echo esc_attr( $address['address'] ?? '' ); ?>"
+                >
             </div>
             <div class="branch_line">
                 <div class="branch_label_wrapper">
