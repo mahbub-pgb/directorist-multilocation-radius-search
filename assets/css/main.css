@@ -119,3 +119,36 @@
     border: 1px solid #ccc;
     border-radius: 4px;
 }
+
+
+.address-copy-wrapper {
+    position: relative;
+}
+
+.address-copy-wrapper input {
+    width: 100%;
+    padding-right: 40px;
+}
+
+.copy-address-btn {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    color: #555;
+}
+
+.copy-address-btn:hover {
+    color: #0073aa;
+}
+
+.copy-message {
+    display: none;
+    margin-top: 6px;
+    font-size: 13px;
+    color: #16a34a;
+}
