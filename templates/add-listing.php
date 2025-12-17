@@ -23,13 +23,13 @@
             <!-- Second line: Extra Fields -->
             <div class="branch_line">
                 <div class="branch_label_wrapper">
-                    <label>Optional Branch Label:</label>
+                    <label>Branch Label:</label>
                     <input type="text" name="branch_label[]" class="branch_label" placeholder="Enter branch label"
                      value="<?php echo esc_attr( $address['branch_label'] ?? '' ); ?>"
                     >
                 </div>
                 <div class="branch_phone_wrapper">
-                    <label>Optional Phone:</label>
+                    <label>Phone:</label>
                     <input type="text" name="branch_phone[]" class="branch_phone" placeholder="Enter phone number"
                      value="<?php echo esc_attr( $address['phone'] ?? '' ); ?>"
                      >
@@ -55,13 +55,13 @@
             </div>
             <div class="branch_line">
                 <div class="branch_label_wrapper">
-                    <label>Optional Branch Label:</label>
+                    <label>Branch Label:</label>
                     <input type="text" name="branch_label[]" class="branch_label" placeholder="Enter branch label"
                     value="<?php echo esc_attr( $address['branch_label'] ?? '' ); ?>"
                     >
                 </div>
                 <div class="branch_phone_wrapper">
-                    <label>Optional Phone:</label>
+                    <label>Phone:</label>
                     <input type="text" name="branch_phone[]" class="branch_phone" placeholder="Enter phone number"
                     value="<?php echo esc_attr( $address['phone'] ?? '' ); ?>"
                     >

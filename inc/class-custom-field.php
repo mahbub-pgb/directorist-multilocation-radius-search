@@ -38,7 +38,7 @@ if (! class_exists('Multi_Location_Custom_Field')):
         public function register_custom_field($widgets)
         {
             $widgets['multilocation'] = [
-                'label'   => __('Multi Location', 'directorist-google-reviews'),
+                'label'   => __('Service Location', 'directorist-google-reviews'),
                 'icon'    => 'la la-map',
                 'options' => [
                     'type' => [
@@ -85,7 +85,7 @@ if (! class_exists('Multi_Location_Custom_Field')):
         public function single_listing_content_widgets($widgets)
         {
             $widgets['multilocation'] = [
-                'label'   => __('Multi Location', 'directorist-google-reviews'),
+                'label'   => __('Service Location', 'directorist-google-reviews'),
                 'options' => [
                     'icon' => [
                         'type'  => 'icon',
@@ -133,7 +133,7 @@ if (! class_exists('Multi_Location_Custom_Field')):
             if (is_array($args)) {
                 extract($args);
             }
-            
+
 
             $theme_template  = '/directorist-custom-code/' . $template_file . '.php';
             $plugin_template = DIRECTORIST_MLRS_DIR . $template_file . '.php';
