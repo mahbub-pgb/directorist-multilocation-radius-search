@@ -22,7 +22,7 @@ jQuery(function ($) {
     }
 
     function initAutocomplete() {
-        $(".directorist-form-multi-address-field .google_addresses").each(function () {
+        $(".google_addresses").each(function () {
             initAutocompleteForInput(this);
         });
     }
@@ -35,17 +35,19 @@ jQuery(function ($) {
         const uniqueId = getRandomInt(100000, 999999);
         const newField = `
         <div class="address_item" data-id="${uniqueId}">
-            <div>
+            <div class="address_line">
                 <label>Address:</label>
-                <input type="text" autocomplete="off" name="addresses[]" class="google_addresses" placeholder="Enter address">
+                <input type="text" class="google_addresses" name="addresses[]" placeholder="Enter address">
             </div>
-            <div>
-                <label>Optional Branch Label:</label>
-                <input type="text" name="branch_label[]" class="branch_label" placeholder="Enter branch label">
-            </div>
-            <div>
-                <label>Optional Phone:</label>
-                <input type="text" name="branch_phone[]" class="branch_phone" placeholder="Enter phone number">
+            <div class="branch_line">
+                <div class="branch_label_wrapper">
+                    <label>Optional Branch Label:</label>
+                    <input type="text" name="branch_label[]" class="branch_label" placeholder="Enter branch label">
+                </div>
+                <div class="branch_phone_wrapper">
+                    <label>Optional Phone:</label>
+                    <input type="text" name="branch_phone[]" class="branch_phone" placeholder="Enter phone number">
+                </div>
             </div>
             <input type="hidden" class="google_addresses_lat" name="latitude[]" value="">
             <input type="hidden" class="google_addresses_lng" name="longitude[]" value="">
@@ -86,16 +88,16 @@ jQuery(function ($) {
         });
     });
 
-    // Initialize on load
+    // Update JSON on input change
+    $(document).on("input", ".google_addresses, .branch_label, .branch_phone", function () {
+        generateJson();
+    });
+
+    // Initialize autocomplete on page load
     $(window).on("load", function () {
         if (isGooglePlacesLoaded()) {
             setTimeout(initAutocomplete, 1000);
         }
-    });
-
-    // Update JSON on input change
-    $(document).on("input", ".google_addresses, .branch_label, .branch_phone", function () {
-        generateJson();
     });
 
 });
