@@ -56,7 +56,7 @@ if (! class_exists('Multi_Location_Custom_Field')):
                     'label' => [
                         'type'  => 'text',
                         'label' => __('Label', 'directorist-google-reviews'),
-                        'value' => 'Multi Location',
+                        'value' => 'Service Location',
                     ],
                     'placeholder' => [
                         'type'  => 'text',
