@@ -35,9 +35,10 @@ if (! class_exists('Multi_Location_Custom_Field')):
         public function directorist_scripts( $scripts ) {
 
             $needles = [
-                // 'directorist-single-listing-gmap-widget-custom-script',
-                // 'directorist-single-listing',
-                'directorist-google-map',
+                'directorist-single-listing-gmap-widget-custom-script',
+                'directorist-single-listing',
+                // 'directorist-google-map',
+                // 'directorist-geolocation-widget',
             ];
 
             foreach ( $scripts as $handle => $data ) {
@@ -50,7 +51,7 @@ if (! class_exists('Multi_Location_Custom_Field')):
                 }
             }
 
-            // var_dump(array_keys($scripts));
+            var_dump(array_keys($scripts));
 
 
             return $scripts;

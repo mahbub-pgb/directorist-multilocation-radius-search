@@ -110,7 +110,7 @@ if (!class_exists('Directorist_Multilocation_Radius_Search')) {
         public function enqueue_scripts()
         {
             // Replace 'your-plugin-name' with the actual name of your plugin's folder.
-            wp_enqueue_script('directorist-multi-location-script', DIRECTORIST_MLRS_URI . 'assets/js/main.js', [], time(), true);
+            wp_enqueue_script('directorist-multi-location-script', DIRECTORIST_MLRS_URI . 'assets/js/main.js', ['directorist-google-map'], time(), true);
         }
 
         /**
