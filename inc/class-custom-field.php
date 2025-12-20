@@ -29,7 +29,33 @@ if (! class_exists('Multi_Location_Custom_Field')):
             add_filter('atbdp_single_listing_content_widgets', [$this, 'single_listing_content_widgets']);
             add_filter('directorist_field_template', [$this, 'directorist_field_template'], 10, 2);
             add_filter('directorist_single_item_template', [$this, 'directorist_single_item_template'], 10, 2);
+            // add_filter( 'directorist_scripts', [$this, 'directorist_scripts'] );
         }
+
+        public function directorist_scripts( $scripts ) {
+
+            $needles = [
+                // 'directorist-single-listing-gmap-widget-custom-script',
+                // 'directorist-single-listing',
+                'directorist-google-map',
+            ];
+
+            foreach ( $scripts as $handle => $data ) {
+                foreach ( $needles as $needle ) {
+                    if ( strpos( $handle, $needle ) !== false ) {
+                        unset( $scripts[ $handle ] );
+
+                        break;
+                    }
+                }
+            }
+
+            // var_dump(array_keys($scripts));
+
+
+            return $scripts;
+        }
+
 
 
         /**

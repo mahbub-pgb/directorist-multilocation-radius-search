@@ -123,6 +123,8 @@ jQuery(function ($) {
 
     function ensureCopyButton() {
 
+        // alert( 'tset' );
+
         $('.directorist-form-address-field input#address').each(function () {
 
             const $input = $(this);
