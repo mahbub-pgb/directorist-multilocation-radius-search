@@ -8,6 +8,7 @@
         <div class="controls">
             <button onclick="fitAllMarkers()">📍 Show All Locations</button>
             <button onclick="resetZoom()">🔄 Reset View</button>
+            <button onclick="getDirectionsToAll()">🚗 Get Directions</button>
             <!-- <button onclick="toggleTraffic()">🚗 Toggle Traffic</button>
             <button onclick="changeMapType('satellite')">🛰️ Satellite View</button>
             <button onclick="changeMapType('roadmap')">🗺️ Road Map</button> -->
