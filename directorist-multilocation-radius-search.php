@@ -107,13 +107,52 @@ if (!class_exists('Directorist_Multilocation_Radius_Search')) {
         /**
          *  Enqueue JS file
          */
-        public function enqueue_scripts()
-        {
-            // Replace 'your-plugin-name' with the actual name of your plugin's folder.
-            wp_enqueue_script('directorist-multi-location-script', DIRECTORIST_MLRS_URI . 'assets/js/main.js', ['directorist-google-map'], time(), true);
+        public function enqueue_scripts() {
 
-            wp_enqueue_script('google-maps', DIRECTORIST_MLRS_URI . 'assets/js/maps.js', ['directorist-google-map'], time(), true);
+            // Plugin main JS file
+            wp_enqueue_script(
+                'directorist-multi-location-script',
+                DIRECTORIST_MLRS_URI . 'assets/js/main.js', // your JS file
+                ['jquery'], // dependencies
+                time(),
+                true
+            );
+
+            wp_enqueue_script(
+                'google-maps',
+                DIRECTORIST_MLRS_URI . 'assets/js/maps.js', // your JS file
+                ['jquery'], // dependencies
+                time(),
+                true
+            );
+
+            // Prepare locations (replace with real data later)
+            $locations = [
+                [
+                    'lat'     => 23.8103,
+                    'lng'     => 90.4125,
+                    'title'   => 'Dhaka Office',
+                    'address' => 'Gulshan Avenue, Dhaka 1212, Bangladesh',
+                    'phone'   => '+880 1700-000001',
+                    'image'   => 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=400&h=300&fit=crop',
+                ],
+                // add more locations
+            ];
+
+            // Get Google Maps API key from Directorist settings
+            $google_map_api_key = get_directorist_option('map_api_key', '');
+
+            // Pass PHP data to JS
+            wp_localize_script(
+                'directorist-multi-location-script',
+                'MultiLocationMapData',
+                [
+                    'apiKey'    => $google_map_api_key,
+                    'locations' => $locations
+                ]
+            );            
         }
+
 
         /**
          *  Enqueue CSS file
