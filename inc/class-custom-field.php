@@ -28,7 +28,27 @@ if (! class_exists('Multi_Location_Custom_Field')):
             add_filter('atbdp_form_preset_widgets', [$this, 'register_custom_field']);
             add_filter('atbdp_single_listing_content_widgets', [$this, 'single_listing_content_widgets']);
             add_filter('directorist_field_template', [$this, 'directorist_field_template'], 10, 2);
-            add_filter('directorist_single_item_template', [$this, 'directorist_single_item_template'], 10, 2);            
+            add_filter('directorist_single_item_template', [$this, 'directorist_single_item_template'], 10, 2);
+
+            add_filter( 'directorist_template', [ $this, 'change_template' ], 20, 2 );            
+        }
+
+        public function change_template( $template, $args ) {
+            if ( 'single/fields/map' == $template ) {
+                // Check for theme override first
+                $theme_template = '/directorist-custom-code/templates/map.php';
+                
+                if (file_exists(get_stylesheet_directory() . $theme_template)) {
+                    return get_stylesheet_directory() . $theme_template;
+                } elseif (file_exists(get_template_directory() . $theme_template)) {
+                    return get_template_directory() . $theme_template;
+                } else {
+                    $template = $this->load_template( 'templates/map' );
+                    // Return plugin template path
+                    return $template;
+                }
+            }
+            return $template;
         }
 
         /**
