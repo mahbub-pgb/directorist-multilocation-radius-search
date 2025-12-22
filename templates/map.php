@@ -3,7 +3,7 @@
     <div class="container">
         <div class="header">
             <h1>🗺️ Multi Location Google Maps</h1>
-            <p>Test with sample locations - Click markers to see details</p>
+            <!-- <p>Test with sample locations - Click markers to see details</p> -->
         </div>
 
         <div class="controls">
