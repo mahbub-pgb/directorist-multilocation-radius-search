@@ -23,13 +23,14 @@
         </div>
     </div>
 
-    <script>
-        
-    </script>
+    <?php $google_map_api_key = get_directorist_option(
+        'map_api_key',
+        ''
+    ); ?>
 
     <!-- Replace YOUR_API_KEY with your actual Google Maps API key -->
     <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCwxELCisw4mYqSv_cBfgOahfrPFjjQLLo&callback=initMap"
+        src="https://maps.googleapis.com/maps/api/js?key=<?php echo $google_map_api_key ?>&callback=initMap"
         onerror="alert('Failed to load Google Maps. Please check your internet connection and API key.')">
     </script>
 </body>
