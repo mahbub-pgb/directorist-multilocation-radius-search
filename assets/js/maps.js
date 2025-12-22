@@ -1,10 +1,5 @@
 // TEST DATA - Replace this with your actual data later
         const testLocations = MultiLocationMapData.locations;
-
-        
-        console.log( MultiLocationMapData.locations );
-        console.log( testLocations );
-
         let map;
         let markers = [];
         let infoWindows = [];
@@ -49,8 +44,6 @@
 
             // Populate location list
             populateLocationList();
-
-            console.log('Map initialized successfully!');
         }
 
         // Add marker to map
@@ -169,6 +162,7 @@
                     <div class="location-details">
                         <strong>${location.title}</strong>
                         <small>${location.address}</small>
+                        <span class="location-phone">📞 ${location.phone}</span>
                     </div>
                 `;
                 
