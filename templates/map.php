@@ -3,12 +3,15 @@
     <div class="container">
         <div class="header">
             <h1>🗺️ Multi Location Google Maps</h1>
-            <!-- <p>Test with sample locations - Click markers to see details</p> -->
+            <p>Test with sample locations - Click markers to see details</p>
         </div>
 
         <div class="controls">
             <button onclick="fitAllMarkers()">📍 Show All Locations</button>
             <button onclick="resetZoom()">🔄 Reset View</button>
+            <!-- <button onclick="toggleTraffic()">🚗 Toggle Traffic</button>
+            <button onclick="changeMapType('satellite')">🛰️ Satellite View</button>
+            <button onclick="changeMapType('roadmap')">🗺️ Road Map</button> -->
         </div>
 
         <div id="map">
