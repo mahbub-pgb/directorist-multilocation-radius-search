@@ -1,46 +1,9 @@
 // TEST DATA - Replace this with your actual data later
-        const testLocations = [
-            {
-                lat: 23.8103,
-                lng: 90.4125,
-                title: "Dhaka Office",
-                address: "Gulshan Avenue, Dhaka 1212, Bangladesh",
-                phone: "+880 1700-000001",
-                image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=400&h=300&fit=crop"
-            },
-            {
-                lat: 23.7272,
-                lng: 90.4093,
-                title: "Dhanmondi Branch",
-                address: "Road 27, Dhanmondi, Dhaka 1209, Bangladesh",
-                phone: "+880 1700-000002",
-                image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=400&h=300&fit=crop"
-            },
-            {
-                lat: 23.7939,
-                lng: 90.4039,
-                title: "Banani Location",
-                address: "Kemal Ataturk Avenue, Banani, Dhaka 1213, Bangladesh",
-                phone: "+880 1700-000003",
-                image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=400&h=300&fit=crop"
-            },
-            {
-                lat: 23.7515,
-                lng: 90.3773,
-                title: "Mirpur Center",
-                address: "Mirpur Road, Dhaka 1216, Bangladesh",
-                phone: "+880 1700-000004",
-                image: "https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=400&h=300&fit=crop"
-            },
-            {
-                lat: 23.8607,
-                lng: 90.3982,
-                title: "Uttara Branch",
-                address: "Sector 7, Uttara, Dhaka 1230, Bangladesh",
-                phone: "+880 1700-000005",
-                image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=400&h=300&fit=crop"
-            }
-        ];
+        const testLocations = MultiLocationMapData.locations;
+
+        
+        console.log( MultiLocationMapData.locations );
+        console.log( testLocations );
 
         let map;
         let markers = [];

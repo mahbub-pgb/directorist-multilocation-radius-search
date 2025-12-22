@@ -127,17 +127,8 @@ if (!class_exists('Directorist_Multilocation_Radius_Search')) {
             );
 
             // Prepare locations (replace with real data later)
-            $locations = [
-                [
-                    'lat'     => 23.8103,
-                    'lng'     => 90.4125,
-                    'title'   => 'Dhaka Office',
-                    'address' => 'Gulshan Avenue, Dhaka 1212, Bangladesh',
-                    'phone'   => '+880 1700-000001',
-                    'image'   => 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=400&h=300&fit=crop',
-                ],
-                // add more locations
-            ];
+
+            $locations = get_listing_multi_locations();
 
             // Get Google Maps API key from Directorist settings
             $google_map_api_key = get_directorist_option('map_api_key', '');

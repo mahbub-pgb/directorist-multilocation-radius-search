@@ -12,6 +12,9 @@
 // Exit if accessed directly.
 defined('ABSPATH') || die('Direct access is not allowed.');
 
+// Load required functions
+require_once DIRECTORIST_MLRS_DIR . 'inc/functions.php';
+
 if (! class_exists('Multi_Location_Radius_Search')):
     class Multi_Location_Radius_Search
     {
@@ -23,8 +26,16 @@ if (! class_exists('Multi_Location_Radius_Search')):
         protected $meta_key;
 
         public function __construct()
-        {
+        { 
+            
             add_filter('atbdp_listing_search_query_argument', [ $this, 'multiple_radius_search_processor' ]);
+
+            // add_action( 'wp_head', function (){
+            //     $data = get_listing_multi_locations( 6824 );
+            //     echo '<pre>';
+            //     print_r( $data );
+            //     echo '</pre>';
+            // });
         }
 
         public function multiple_radius_search_processor($args)
