@@ -112,6 +112,18 @@
             bounds.extend(position);
         }
 
+        function getDirectionsLink(lat, lng) {
+            if (!lat || !lng) return '';
+
+            return `
+                <a href="https://www.google.com/maps?daddr=${lat},${lng}" target="_blank" class="get-directions-link">
+                    <i class="directorist-icon-mask" aria-hidden="true"
+                       style="--directorist-icon: url(${MultiLocationMapData.icon_url || ''})"></i>
+                    Get Directions
+                </a>
+            `;
+        }
+
         // Close all info windows
         function closeAllInfoWindows() {
             infoWindows.forEach(iw => iw.close());
